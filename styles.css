@@ -1,7 +1,7 @@
 :root {
   --blue: #1a36b4;
   --blue-dark: #142a8f;
-  --coral: #ff3d3d;
+  --accent: #fef66a;
   --bg-light: #f6f6f6;
   --bg-dark: #1d1d1d;
   --text: #14141c;
@@ -53,7 +53,7 @@ a { color: var(--blue); }
   letter-spacing: 0.08em;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--coral);
+  color: var(--blue);
   margin-bottom: 12px;
 }
 .eyebrow.center { text-align: center; }
@@ -72,7 +72,7 @@ a { color: var(--blue); }
 .btn:hover { transform: translateY(-2px); }
 
 .btn-primary { background: var(--blue); color: var(--white); }
-.btn-accent { background: var(--coral); color: var(--white); }
+.btn-accent { background: var(--accent); color: var(--text); }
 .btn-outline { background: transparent; color: var(--blue); border-color: var(--blue); }
 .btn-outline-light { background: transparent; color: var(--white); border-color: var(--white); }
 .btn-small { padding: 10px 20px; font-size: 0.85rem; }
@@ -109,7 +109,7 @@ a { color: var(--blue); }
   font-size: 1.1rem;
 }
 .hero .cta-row { justify-content: center; }
-.hero .eyebrow { text-align: center; color: #ffb3b3; }
+.hero .eyebrow { text-align: center; color: var(--accent); }
 
 /* Trusted by */
 .trusted { padding: 40px 0; border-bottom: 1px solid #eaeaea; }
@@ -172,7 +172,7 @@ a { color: var(--blue); }
 .track-record h2 { color: var(--white); }
 .track-copy { max-width: 640px; margin: 0 auto 32px; color: rgba(255,255,255,0.75); }
 .stat-row { display: flex; justify-content: center; gap: 60px; margin-bottom: 40px; flex-wrap: wrap; }
-.stat-num { display: block; font-family: var(--font-head); font-size: 2.6rem; font-weight: 800; color: var(--coral); }
+.stat-num { display: block; font-family: var(--font-head); font-size: 2.6rem; font-weight: 800; color: var(--accent); }
 .stat-label { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
 .track-photo { border-radius: var(--radius); max-width: 100%; margin: 0 auto; }
 
@@ -227,13 +227,13 @@ a { color: var(--blue); }
   text-align: left;
   position: relative;
 }
-.price-card.popular { border: 2px solid var(--coral); }
+.price-card.popular { border: 2px solid var(--accent); }
 .popular-badge {
   position: absolute;
   top: -14px;
   right: 24px;
-  background: var(--coral);
-  color: var(--white);
+  background: var(--accent);
+  color: var(--text);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -244,10 +244,15 @@ a { color: var(--blue); }
 }
 .price-card h3 { color: var(--blue); }
 .price { font-size: 2rem; font-weight: 800; font-family: var(--font-head); color: var(--text); margin-bottom: 4px; }
-.price-amount { color: var(--coral); }
+.price-amount { color: var(--blue); }
 .price-annual { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; }
 .price-desc { min-height: 90px; }
+.price-actions { display: flex; flex-direction: column; gap: 10px; }
 .price-card .btn { width: 100%; text-align: center; }
+.price-card .btn[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
 .pricing-note { text-align: center; max-width: 560px; margin: 40px auto 0; font-size: 0.9rem; }
 
 /* FAQ */

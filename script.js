@@ -8,6 +8,19 @@ const PRICING = {
   "5m+": { essentials: 129, advisory: 579 },
 };
 
+// Fill each entry with the Stripe Payment Link for that organisation size + plan
+// (Stripe dashboard -> Payment Links -> New, one per monthly price). Leave "" until
+// created — the Subscribe button falls back to "Contact us" (the Calendly link) until then.
+const STRIPE_LINKS = {
+  "under30k": { essentials: "", advisory: "" },
+  "30-250k": { essentials: "", advisory: "" },
+  "250-1m": { essentials: "", advisory: "" },
+  "1m-5m": { essentials: "", advisory: "" },
+  "5m+": { essentials: "", advisory: "" },
+};
+
+const INTRO_CALL_LINK = "https://calendly.com/lucy-foregood/new-meeting";
+
 function formatMoney(n) {
   return "$" + n.toLocaleString("en-AU");
 }
@@ -32,6 +45,30 @@ function updatePricing(size) {
     advisoryAnnualEl.textContent = formatMoney(data.advisory * 10);
     advisoryAnnualEl.parentElement.style.display = "";
   }
+
+  updateSubscribeLinks(size, data);
+}
+
+function updateSubscribeLinks(size, data) {
+  document.querySelectorAll("[data-subscribe]").forEach((btn) => {
+    const tier = btn.dataset.subscribe;
+    const priceKnown = data[tier] !== null && data[tier] !== undefined;
+    const stripeUrl = (STRIPE_LINKS[size] || {})[tier];
+
+    if (priceKnown && stripeUrl) {
+      btn.href = stripeUrl;
+      btn.textContent = "Subscribe now";
+      btn.removeAttribute("aria-disabled");
+    } else if (!priceKnown) {
+      // e.g. Under 30K advisory price isn't set yet on the live site
+      btn.href = INTRO_CALL_LINK;
+      btn.textContent = "Contact us";
+    } else {
+      // price known, Stripe link not configured yet — send to intro call instead
+      btn.href = INTRO_CALL_LINK;
+      btn.textContent = "Subscribe now";
+    }
+  });
 }
 
 document.querySelectorAll(".size-tab").forEach((tab) => {
@@ -45,3 +82,6 @@ document.querySelectorAll(".size-tab").forEach((tab) => {
     updatePricing(tab.dataset.size);
   });
 });
+
+// Initialise subscribe links for the default active tab on page load.
+updateSubscribeLinks("30-250k", PRICING["30-250k"]);

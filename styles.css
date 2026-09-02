@@ -159,9 +159,16 @@ a { color: var(--blue); }
 .hero h1 { color: var(--white); max-width: 900px; margin-left: auto; margin-right: auto; }
 .hero-sub {
   max-width: 620px;
-  margin: 0 auto 32px;
+  margin: 0 auto 16px;
   color: rgba(255,255,255,0.85);
   font-size: 1.1rem;
+}
+.hero-tagline {
+  max-width: 560px;
+  margin: 0 auto 32px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .hero .cta-row { justify-content: center; }
 .hero .eyebrow { text-align: center; color: var(--accent); text-transform: none; }

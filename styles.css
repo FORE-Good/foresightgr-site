@@ -121,6 +121,7 @@ a { color: var(--blue); }
 
 /* App beta callout */
 .app-callout { background: var(--bg-light); }
+.app-callout .cta-row { justify-content: center; }
 
 .site-header {
   position: sticky;

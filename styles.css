@@ -136,6 +136,17 @@ a { color: var(--blue); }
   justify-content: space-between;
 }
 .logo img { height: 40px; width: auto; border-radius: 6px; }
+.header-nav { display: flex; gap: 28px; }
+.header-nav a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.header-nav a:hover { color: var(--white); }
+@media (max-width: 700px) {
+  .header-nav { display: none; }
+}
 
 /* Hero */
 .hero {

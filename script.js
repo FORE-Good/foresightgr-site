@@ -12,11 +12,11 @@ const PRICING = {
 // (Stripe dashboard -> Payment Links -> New, one per monthly price). Leave "" until
 // created — the Subscribe button falls back to "Contact us" (the Calendly link) until then.
 const STRIPE_LINKS = {
-  "under30k": { essentials: "", advisory: "" },
-  "30-250k": { essentials: "", advisory: "" },
-  "250-1m": { essentials: "", advisory: "" },
-  "1m-5m": { essentials: "", advisory: "" },
-  "5m+": { essentials: "", advisory: "" },
+  "under30k": { essentials: "https://buy.stripe.com/4gMaEWgLhaaq6xmgRn3gk00", advisory: "" },
+  "30-250k": { essentials: "https://buy.stripe.com/8x24gy8eL6Yeg7W7gN3gk01", advisory: "https://buy.stripe.com/eVqeVcgLheqG8Fu6cJ3gk05" },
+  "250-1m": { essentials: "https://buy.stripe.com/7sYbJ03YveqGbRGeJf3gk02", advisory: "https://buy.stripe.com/aFacN4eD94Q63labx33gk06" },
+  "1m-5m": { essentials: "https://buy.stripe.com/4gMdR82UrdmC9Jybx33gk03", advisory: "https://buy.stripe.com/6oU4gy66DgyO8Fu6cJ3gk07" },
+  "5m+": { essentials: "https://buy.stripe.com/8x25kC1Qn0zQ9Jy0Sp3gk04", advisory: "https://buy.stripe.com/6oUcN48eL3M22h67gN3gk08" },
 };
 
 const INTRO_CALL_LINK = "https://calendly.com/lucy-foregood/new-meeting";

@@ -85,3 +85,24 @@ document.querySelectorAll(".size-tab").forEach((tab) => {
 
 // Initialise subscribe links for the default active tab on page load.
 updateSubscribeLinks("30-250k", PRICING["30-250k"]);
+
+// Announcement bar dismissal, remembered per browser.
+const ANNOUNCEMENT_DISMISS_KEY = "foresight-announcement-dismissed";
+const announcementBar = document.getElementById("announcementBar");
+if (announcementBar) {
+  let dismissed = false;
+  try {
+    dismissed = localStorage.getItem(ANNOUNCEMENT_DISMISS_KEY) === "true";
+  } catch (e) {}
+  if (dismissed) announcementBar.style.display = "none";
+
+  const closeBtn = document.getElementById("announcementClose");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      announcementBar.style.display = "none";
+      try {
+        localStorage.setItem(ANNOUNCEMENT_DISMISS_KEY, "true");
+      } catch (e) {}
+    });
+  }
+}

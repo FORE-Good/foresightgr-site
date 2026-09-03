@@ -106,3 +106,37 @@ if (announcementBar) {
     });
   }
 }
+
+// Newsletter capture, posts directly into the "Stay in the loop" Google Form.
+const NEWSLETTER_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfdFInTlEEPJLqlKfJ5i6GmotuX5iAVSRYtNDEBY2uu3jc84Q/formResponse";
+const NEWSLETTER_EMAIL_FIELD = "entry.902983980";
+
+const newsletterForm = document.getElementById("newsletterForm");
+if (newsletterForm) {
+  newsletterForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const emailInput = document.getElementById("newsletterEmail");
+    const status = document.getElementById("newsletterStatus");
+    const submitBtn = newsletterForm.querySelector("button[type=submit]");
+
+    const formData = new FormData();
+    formData.append(NEWSLETTER_EMAIL_FIELD, emailInput.value);
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    fetch(NEWSLETTER_ACTION_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: formData,
+    })
+      .catch(() => {})
+      .finally(() => {
+        emailInput.value = "";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Keep me posted";
+        status.textContent = "Thanks - you're on the list!";
+        status.hidden = false;
+      });
+  });
+}

@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-const ANNOUNCEMENT_DISMISS_KEY = "foresight-announcement-dismissed";
+const ANNOUNCEMENT_DISMISS_KEY = "foresight-announcement-dismissed-gr101";
+const WEBINAR_LINK =
+  "https://events.humanitix.com/government-relations-101-what-every-for-purpose-leader-needs-to-know";
 
 export default function AnnouncementBar() {
   const [visible, setVisible] = useState(true);
@@ -32,16 +34,15 @@ export default function AnnouncementBar() {
     <div className="announcement-bar" id="announcementBar">
       <div className="wrap announcement-inner">
         <span>
-          The FOREsight Intelligence Tool is in development - try it free until
-          Oct 31 and help shape it.
+          Free webinar: Government Relations 101 for for-purpose leaders
         </span>
         <a
           className="announcement-link"
-          href="https://app.foresightgr.com.au/"
+          href={WEBINAR_LINK}
           target="_blank"
           rel="noopener"
         >
-          Try it now
+          Register free
         </a>
         <button
           className="announcement-close"

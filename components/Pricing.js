@@ -13,16 +13,15 @@ import {
 import { track } from "@/lib/track";
 
 /*
- * Pricing experiment: three options at equal visual weight.
+ * Pricing experiment: three options, Campaign Pack highlighted as the entry.
  *
- *   campaign-pack  – one moment, 3 months, fixed price
+ *   campaign-pack  – one moment, 3 months, fixed price (highlighted)
  *   guided         – advisory + tools, monthly (was "advisory" in PRICING)
  *   essentials     – tools & intel only, monthly
  *
  * Every CTA is tagged with the option and revenue band so the choice is
  * visible in Calendly (UTMs), Stripe (client_reference_id) and any analytics
- * tool via track(). Deliberately no "most popular" badge: it would bias the
- * result we're trying to measure.
+ * tool via track().
  */
 
 export default function Pricing() {
@@ -47,6 +46,7 @@ export default function Pricing() {
     return [
       {
         id: "campaign-pack",
+        highlighted: true,
         eyebrow: "For a moment",
         name: "Campaign Pack",
         summary:
@@ -172,9 +172,14 @@ export default function Pricing() {
           {options.map((opt) => (
             <article
               key={opt.id}
-              className="price-card price-card--option"
+              className={`price-card price-card--option${
+                opt.highlighted ? " price-card--hero popular" : ""
+              }`}
               data-option={opt.id}
             >
+              {opt.highlighted ? (
+                <p className="popular-badge">Most organisations start here</p>
+              ) : null}
               <p className="price-eyebrow">{opt.eyebrow}</p>
               <h3>{opt.name}</h3>
               <p className="price-summary">{opt.summary}</p>

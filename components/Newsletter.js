@@ -30,43 +30,41 @@ export default function Newsletter() {
 
     setEmail("");
     setSending(false);
-    setStatus("Thanks - you're on the list!");
+    setStatus("Thanks! You're on the list!");
   }
 
   return (
-    <section className="newsletter">
-      <div className="wrap narrow">
-        <h3>Stay in the loop</h3>
-        <p>
-          Not ready to book a call yet? Leave your email and we&apos;ll keep you
-          posted as FOREsight grows.
+    <div className="footer-newsletter">
+      <h3>Stay in the loop</h3>
+      <p>
+        Not ready to book a call yet? Leave your email and we&apos;ll keep you
+        posted as FOREsight grows.
+      </p>
+      <form
+        id="newsletterForm"
+        className="footer-newsletter-form"
+        onSubmit={handleSubmit}
+      >
+        <input
+          type="email"
+          id="newsletterEmail"
+          name="email"
+          placeholder="you@organisation.org.au"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button type="submit" className="btn btn-accent" disabled={sending}>
+          {sending ? "Sending..." : "Keep me posted"}
+        </button>
+      </form>
+      {status ? (
+        <p className="newsletter-status" id="newsletterStatus">
+          {status}
         </p>
-        <form
-          id="newsletterForm"
-          className="newsletter-form"
-          onSubmit={handleSubmit}
-        >
-          <input
-            type="email"
-            id="newsletterEmail"
-            name="email"
-            placeholder="you@organisation.org.au"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <button type="submit" className="btn btn-primary" disabled={sending}>
-            {sending ? "Sending..." : "Keep me posted"}
-          </button>
-        </form>
-        {status ? (
-          <p className="newsletter-status" id="newsletterStatus">
-            {status}
-          </p>
-        ) : (
-          <p className="newsletter-status" id="newsletterStatus" hidden />
-        )}
-      </div>
-    </section>
+      ) : (
+        <p className="newsletter-status" id="newsletterStatus" hidden />
+      )}
+    </div>
   );
 }

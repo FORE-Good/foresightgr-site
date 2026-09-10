@@ -2,7 +2,7 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Pricing from "@/components/Pricing";
 import Newsletter from "@/components/Newsletter";
-import { APP_LINK, INTRO_CALL_LINK, QUIZ_LINK } from "@/lib/site";
+import { INTRO_CALL_LINK, QUIZ_LINK } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -14,10 +14,10 @@ export default function HomePage() {
         <section className="hero">
           <div className="wrap">
             <h1>
-            Become the organisation government can't ignore
+              Become the organisation government can&apos;t ignore
             </h1>
             <p className="hero-sub">
-            Tech and expertise to superpower your team
+              Tech and expertise to superpower your team
             </p>
             <div className="cta-row">
               <a
@@ -26,7 +26,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener"
               >
-                Book a FREE intro call
+                Book a free intro call
               </a>
               <a
                 className="btn btn-outline-light"
@@ -40,60 +40,38 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* <section className="section problem">
+        <section className="section section-band problem rip">
           <div className="wrap narrow">
-
-
-            <p>Tech and expertise to superpower your team</p>
-          </div>
-        </section> */}
-
-        <section className="section problem">
-          <div className="wrap narrow">
-          <p>
-              Funding rounds close. Consultations open and shut. Policy shifts
-              without warning.
-            </p>
-            <h3>
+            <p className="eyebrow center">Why it matters</p>
+            <h2>
               Every missed window costs funding, influence, or a seat at the
               table.
-            </h3>
-            {/* <p  className="section-sub">We give small teams big capabilities</p> */}
-            {/* <p>
+            </h2>
+            <p className="lead">
               Funding rounds close. Consultations open and shut. Policy shifts
               without warning.
             </p>
-            <p className="section-sub">
-              Don&apos;t miss an opportunity FORE engagement.
-            </p> */}
-             <p className="section-sub"> Know what matters. Know what to do next. <br/> Never  miss an opportunity FORE engagement.</p>
           </div>
         </section>
 
         <section className="section features">
           <div className="wrap">
-            {/* <h2 className="section-title">
-              Engage government with confidence.
-            </h2>
-            <p className="section-or">or</p> */}
+            <p className="eyebrow center">What you get</p>
             <h2 className="section-title">
-              Build government relations capability.
+              Build government relations capability
             </h2>
-
-            {/* <p className="section-sub">
-              Know what matters. Know what to do next. Achieve your goals.
-            </p> */}
-          <p  className="section-sub">We give small teams big capabilities</p>
-            
+            <p className="section-sub lead">
+              We give small teams big capabilities. Know what matters. Know
+              what to do next.
+            </p>
 
             <div className="feature-grid">
               <article className="feature-card">
                 <img
                   src="/assets/feature-1.png"
-                  alt="FOREsight intelligence dashboard"
+                  alt="Policy intelligence dashboard"
                 />
-                <h3>FOREsight</h3>
-                <p className="feature-verb">Know</p>
+                <h3>Intelligence tool</h3>
                 <p>
                   Personalised intelligence so you never miss another
                   opportunity.
@@ -107,38 +85,32 @@ export default function HomePage() {
               <article className="feature-card">
                 <img
                   src="/assets/feature-3.png"
-                  alt="FOREthought advisory call"
+                  alt="Advisory call"
                 />
-                <h3>FOREthought</h3>
-                <p className="feature-verb">Strategise</p>
+                <h3>Advisory</h3>
                 <p>
                   Expert guidance to build strategy and learn how to achieve it.
                 </p>
                 <ul className="feature-detail">
                   <li>2 &times; 30 min calls a month</li>
-                  <li>Expert developed strategy</li>
-                  <li>Direct email support</li>
+                  <li>Walkthroughs and learning</li>
+                  <li>Personalised support</li>
                 </ul>
               </article>
               <article className="feature-card">
                 <img
                   src="/assets/feature-2.png"
-                  alt="FOREwards template library"
+                  alt="Template library"
                 />
-                <h3>FOREwards</h3>
-                <p className="feature-verb">Act</p>
-                
-                {/* <p>
-                  Easily achieve your goals with our tools, templates and workflows
-                </p> */}
+                <h3>Action</h3>
                 <p>
-                  Get the capability to execute with our tools, templates and workflows
+                  Get the capability to execute with our tools, templates and
+                  workflows
                 </p>
                 <ul className="feature-detail">
                   <li>Prepare for ministerial briefings</li>
                   <li>Write budget asks</li>
                   <li>Find contacts</li>
-
                 </ul>
               </article>
             </div>
@@ -150,16 +122,48 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener"
               >
-                Book a demo
+                Book a free intro call
               </a>
             </div>
           </div>
         </section>
 
+        <section className="section dont-get">
+          <div className="wrap narrow">
+            <h2 className="section-title">What you don&apos;t get</h2>
+            <ul className="inclusions-list">
+              <li className="excluded">
+                24/7 support or formal uptime guarantees
+              </li>
+              <li className="excluded">
+                Project work between calls - we don&apos;t take research,
+                writing, analysis or operational tasks off your plate
+              </li>
+              <li className="excluded">
+                Lobbying on your behalf - we equip you to engage government
+                yourself
+              </li>
+              <li className="excluded">
+                Open-ended advisory by email - strategic input lives inside the
+                calls
+              </li>
+              <li className="excluded">
+                Migration of data from other systems, unless scoped together up
+                front
+              </li>
+              <li className="excluded">
+                Custom features built on demand - we listen closely, but build
+                to roadmap
+              </li>
+            </ul>
+          </div>
+        </section>
+
         <Pricing />
 
-        <section className="section track-record">
+        <section className="section track-record rip rip-flip">
           <div className="wrap">
+            <p className="eyebrow center eyebrow-light">Track record</p>
             <h2>You won&apos;t be figuring this out alone</h2>
             <p className="track-copy">
               FOREsight is built on FORE Good&apos;s track record: real briefs
@@ -169,11 +173,11 @@ export default function HomePage() {
             <div className="stat-row">
               <div className="stat">
                 <span className="stat-num">80+</span>
-                <span className="stat-label">MP Meetings since mid-April</span>
+                <span className="stat-label">MP meetings since mid-April</span>
               </div>
               <div className="stat">
                 <span className="stat-num">1,254+</span>
-                <span className="stat-label">organisations engaged</span>
+                <span className="stat-label">Organisations engaged</span>
               </div>
             </div>
             <img
@@ -184,24 +188,25 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="section testimonial-trusted">
+        <section className="section testimonial-trusted rip">
           <div className="wrap">
             <div className="testimonial-trusted-grid">
               <div className="testimonial">
                 <blockquote>
-                  &quot;FOREsight has been
-                  invaluable to help us figure out who to talk to at different
-                  levels of government and what tenders and grants to stay across. It&apos;s really helped us to demystify the
-                  process and the team has been wonderful in helping us to understand
-                  different templates and processes that best suit a small team like
-                  ours.&quot;
+                  &quot;FOREsight has been invaluable to help us figure out who
+                  to talk to at different levels of government and what tenders
+                  and grants to stay across. It&apos;s really helped us to
+                  demystify the process and the team has been wonderful in
+                  helping us to understand different templates and processes
+                  that best suit a small team like ours.&quot;
                 </blockquote>
                 <p className="testimonial-attr">
-                  - Cameron Cliff, Founder of the social enterprise Capyble
+                  &mdash; Cameron Cliff, Founder of the social enterprise
+                  Capyble
                 </p>
               </div>
               <div className="trusted">
-                <p className="trusted-label">Trusted by:</p>
+                <p className="trusted-label">Trusted by</p>
                 <div className="trusted-logos">
                   <img src="/assets/trusted-1.png" alt="Capyble" />
                   <img
@@ -215,7 +220,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
 
         <section className="section faq" id="faq">
           <div className="wrap narrow">
@@ -239,7 +243,7 @@ export default function HomePage() {
                 <p>
                   Our experts are former government staffers who work with FORE
                   to help you turn intelligence into strategy and action. They
-                  bring the judgement behind our FOREthought advisory calls —
+                  bring the judgement behind our advisory calls. They know
                   how government actually works, who to talk to, and what to do
                   next.
                 </p>
@@ -330,7 +334,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="footer-cta">
+        <section className="footer-cta rip rip-flip">
           <div className="wrap narrow">
             <h2>See what FOREsight can do for your organisation</h2>
             <div className="cta-row">
@@ -340,7 +344,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener"
               >
-                Book a FREE intro call
+                Book a free intro call
               </a>
               <a
                 className="btn btn-outline-light"
@@ -353,26 +357,27 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        <Newsletter />
       </main>
 
-      <footer className="site-footer">
-        <div className="wrap footer-inner">
-          <img
-            className="footer-logo"
-            src="/assets/logo-horizontal.jpg"
-            alt="FOREsight by FORE Good"
-          />
-          <div className="footer-links">
-            <a
-              href="http://www.foregood.org.au"
-              target="_blank"
-              rel="noopener"
-            >
-              www.FOREgood.org.au
-            </a>
-            <a href="mailto:hello@foregood.org.au">hello@foregood.org.au</a>
+      <footer className="site-footer rip">
+        <div className="wrap footer-grid">
+          <Newsletter />
+          <div className="footer-brand">
+            <img
+              className="footer-logo"
+              src="/assets/logo-horizontal.jpg"
+              alt="FOREsight by FORE Good"
+            />
+            <div className="footer-links">
+              <a
+                href="http://www.foregood.org.au"
+                target="_blank"
+                rel="noopener"
+              >
+                www.FOREgood.org.au
+              </a>
+              <a href="mailto:hello@foregood.org.au">hello@foregood.org.au</a>
+            </div>
           </div>
         </div>
       </footer>

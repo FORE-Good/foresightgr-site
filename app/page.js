@@ -102,7 +102,7 @@ export default function HomePage() {
                   src="/assets/feature-2.png"
                   alt="Template library"
                 />
-                <h3>Action</h3>
+                <h3>Library</h3>
                 <p>
                   Get the capability to execute with our tools, templates and
                   workflows

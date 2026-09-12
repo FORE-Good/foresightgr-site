@@ -177,9 +177,6 @@ export default function Pricing() {
               }`}
               data-option={opt.id}
             >
-              {opt.highlighted ? (
-                <p className="popular-badge">Most organisations start here</p>
-              ) : null}
               <p className="price-eyebrow">{opt.eyebrow}</p>
               <h3>{opt.name}</h3>
               <p className="price-summary">{opt.summary}</p>

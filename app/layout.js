@@ -1,4 +1,11 @@
 import { Inter, Poppins } from "next/font/google";
+import OrganizationJsonLd from "@/components/OrganizationJsonLd";
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+} from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,15 +23,42 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "FOREsight | One-Page Policy Briefs - by FORE Good",
-  description:
-    "FOREsight gives for-purpose organisations the templates, intelligence and expert access to run their own government relations, without hiring a GR team.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  icons: {
+    icon: "/assets/logo-mark.png",
+    apple: "/assets/logo-mark.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_AU",
+    url: "/",
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en-AU" className={`${inter.variable} ${poppins.variable}`}>
-      <body>{children}</body>
+      <body>
+        <OrganizationJsonLd />
+        {children}
+      </body>
     </html>
   );
 }

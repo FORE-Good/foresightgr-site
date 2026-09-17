@@ -5,10 +5,13 @@ export default function Header() {
     <header className="site-header">
       <div className="wrap header-inner">
         <a href="#top" className="logo">
-          <img
-            src="/assets/logo-horizontal.jpg"
-            alt="FOREsight by FORE Good"
-          />
+          <picture>
+            <source media="(max-width: 700px)" srcSet="/assets/logo-mark.png" />
+            <img
+              src="/assets/logo-horizontal.jpg"
+              alt="FOREsight by FORE Good"
+            />
+          </picture>
         </a>
         <div className="header-right">
           <nav className="header-nav">
@@ -21,7 +24,7 @@ export default function Header() {
             target="_blank"
             rel="noopener"
           >
-            Book a free intro call
+            Book a<span className="header-cta-extra"> free intro</span> call
           </a>
         </div>
       </div>

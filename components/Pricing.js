@@ -143,10 +143,6 @@ export default function Pricing() {
       <div className="wrap">
         <p className="eyebrow center">Pricing</p>
         <h2 className="section-title">Three ways to work with us</h2>
-        <p className="section-sub">
-          Priced to your organisation&apos;s revenue, because a $40k budget and
-          a $10m budget can&apos;t stretch the same way.
-        </p>
 
         <div className="size-tabs" role="tablist" aria-label="Organisation size">
           <span className="size-tabs-label">Your annual revenue:</span>
@@ -189,15 +185,7 @@ export default function Pricing() {
                   <span className="price-term"> {opt.price.term}</span>
                 ) : null}
               </p>
-              {opt.annual ? (
-                <p className="price-annual">
-                  <span data-tier={`${opt.id}-annual`}>{opt.annual}</span>
-                  /year, 2 months free
-                </p>
-              ) : (
-                <p className="price-annual price-annual--spacer" aria-hidden />
-              )}
-
+              
               <ul className="price-checklist">
                 {opt.items.map((item) => (
                   <li

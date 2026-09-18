@@ -2,7 +2,7 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Pricing from "@/components/Pricing";
 import Newsletter from "@/components/Newsletter";
-import { INTRO_CALL_LINK, QUIZ_LINK } from "@/lib/site";
+import { APP_SIGNUP_LINK, INTRO_CALL_LINK, QUIZ_LINK } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -118,42 +118,38 @@ export default function HomePage() {
             <div className="cta-row features-cta">
               <a
                 className="btn btn-accent"
-                href={INTRO_CALL_LINK}
+                href={APP_SIGNUP_LINK}
                 target="_blank"
                 rel="noopener"
               >
-                Book a free intro call
+                Get started
               </a>
             </div>
           </div>
         </section>
 
-        <section className="section dont-get">
+        <section className="section stays-with-you">
           <div className="wrap narrow">
-            <h2 className="section-title">What you don&apos;t get</h2>
+            <h2 className="section-title">What stays with you</h2>
             <ul className="inclusions-list">
-              <li className="excluded">
-                24/7 support or formal uptime guarantees
+              <li className="stays-with">
+                You speak to government yourself, in your own voice. We
+                don&apos;t lobby on your behalf.
               </li>
-              <li className="excluded">
-                Project work between calls - we don&apos;t take research,
-                writing, analysis or operational tasks off your plate
+              <li className="stays-with">
+                You own the work between sessions. Research, writing and
+                analysis stay on your plate.
               </li>
-              <li className="excluded">
-                Lobbying on your behalf - we equip you to engage government
-                yourself
+              <li className="stays-with">
+                Strategy lives in the calls, not in an open-ended email thread.
               </li>
-              <li className="excluded">
-                Open-ended advisory by email - strategic input lives inside the
-                calls
+              <li className="stays-with">
+                You keep your existing systems. We don&apos;t migrate data
+                unless we scope that together first.
               </li>
-              <li className="excluded">
-                Migration of data from other systems, unless scoped together up
-                front
-              </li>
-              <li className="excluded">
-                Custom features built on demand - we listen closely, but build
-                to roadmap
+              <li className="stays-with">
+                You work with the product on a shared roadmap. We listen closely,
+                but we don&apos;t build custom features on demand.
               </li>
             </ul>
           </div>

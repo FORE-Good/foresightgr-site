@@ -280,19 +280,27 @@ a { color: var(--blue); }
   margin-top: 48px;
 }
 
-/* What you don't get */
-.dont-get {
+/* What stays with you */
+.stays-with-you {
   padding-top: 0;
 }
-.dont-get .section-title {
+.stays-with-you .section-title {
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 28px;
 }
-.dont-get .inclusions-list {
+.stays-with-you .inclusions-list {
   max-width: 640px;
   margin: 0 auto;
+}
+.stays-with-you .inclusions-list li.stays-with {
+  color: var(--text);
+}
+.stays-with-you .inclusions-list li.stays-with::before {
+  content: "\2713";
+  background: #e8ecf9;
+  color: var(--blue);
 }
 
 /* Track record */

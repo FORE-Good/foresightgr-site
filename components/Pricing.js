@@ -19,9 +19,9 @@ import { track } from "@/lib/track";
  *   guided         – advisory + tools, monthly (was "advisory" in PRICING)
  *   essentials     – tools & intel only, monthly
  *
- * Every CTA is tagged with the option and revenue band so the choice is
- * visible in Calendly (UTMs), Stripe (client_reference_id) and any analytics
- * tool via track().
+ * Subscribe now deep-links into the app with plan + band pre-selected.
+ * Guided and Campaign Pack at under30k stay Contact us / Calendly.
+ * Intro-call CTAs keep Calendly UTMs; analytics via track().
  */
 
 export default function Pricing() {
@@ -69,7 +69,7 @@ export default function Pricing() {
             included: true,
           },
         ],
-        primary: subscribeHref(size, "pack", data, "campaign-pack"),
+        primary: subscribeHref(size, "pack", data),
         secondary: {
           href: introCallHref("campaign-pack", size),
           label: "Book a free intro call",
@@ -89,7 +89,7 @@ export default function Pricing() {
           { text: "Policy Intelligence Tool", included: true },
           { text: "Template Library", included: true },
         ],
-        primary: subscribeHref(size, "advisory", data, "guided"),
+        primary: subscribeHref(size, "guided", data),
         secondary: {
           href: introCallHref("guided", size),
           label: "Book a free intro call",

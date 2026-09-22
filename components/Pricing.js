@@ -40,7 +40,7 @@ export default function Pricing() {
         : {
             amount: formatMoney(data.advisory),
             term: "/month",
-            annual: formatMoney(data.advisory * 10),
+            annual: formatMoney(data.advisory * 11),
           };
 
     return [
@@ -105,7 +105,7 @@ export default function Pricing() {
           amount: formatMoney(data.essentials),
           term: "/month",
         },
-        annual: formatMoney(data.essentials * 10),
+        annual: formatMoney(data.essentials * 11),
         items: [
           { text: "Policy Intelligence Tool", included: true },
           { text: "Template Library", included: true },
@@ -185,7 +185,12 @@ export default function Pricing() {
                   <span className="price-term"> {opt.price.term}</span>
                 ) : null}
               </p>
-              
+              {opt.annual ? (
+                <p className="price-annual">
+                  {opt.annual}/year, 1 month free
+                </p>
+              ) : null}
+
               <ul className="price-checklist">
                 {opt.items.map((item) => (
                   <li

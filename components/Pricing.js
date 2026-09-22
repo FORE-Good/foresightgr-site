@@ -187,7 +187,7 @@ export default function Pricing() {
               </p>
               {opt.annual ? (
                 <p className="price-annual">
-                  {opt.annual}/year, 1 month free
+                  Annual: {opt.annual}/year, 1 month free
                 </p>
               ) : null}
 

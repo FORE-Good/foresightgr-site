@@ -1,8 +1,15 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Pricing from "@/components/Pricing";
 import Newsletter from "@/components/Newsletter";
+import FeatureStars from "@/components/stars/FeatureStars";
 import { APP_SIGNUP_LINK, INTRO_CALL_LINK, QUIZ_LINK } from "@/lib/site";
+
+const twitchJitter = JSON.parse(
+  readFileSync(path.join(process.cwd(), "components/twitch&jitter"), "utf8")
+);
 
 export default function HomePage() {
   return (
@@ -12,6 +19,7 @@ export default function HomePage() {
 
       <main id="top">
         <section className="hero">
+          <FeatureStars preset={twitchJitter} place="hero" />
           <div className="wrap">
             <h1>
               Become the organisation government can&apos;t ignore
@@ -55,6 +63,7 @@ export default function HomePage() {
         </section>
 
         <section className="section features">
+          <FeatureStars preset={twitchJitter} />
           <div className="wrap">
             <p className="eyebrow center">What you get</p>
             <h2 className="section-title">
@@ -66,52 +75,61 @@ export default function HomePage() {
             </p>
 
             <div className="feature-grid">
-              <article className="feature-card">
-                <img
-                  src="/assets/feature-1.png"
-                  alt="Policy intelligence dashboard"
-                />
-                <h3>Intelligence tool</h3>
-                <p>
-                  Personalised intelligence so you never miss another
-                  opportunity.
-                </p>
-                <ul className="feature-detail">
-                  <li>Find funding opportunities</li>
-                  <li>Track sittings and consultations</li>
-                  <li>Intel on parliament contacts</li>
-                </ul>
+              <article className="feature-card feature-card--cutout">
+                <div className="feature-visual">
+                  <img
+                    src="/assets/parliament-frame.svg?v=smooth"
+                    alt="Collage of an eye seen through a magnifying glass"
+                  />
+                </div>
+                <div className="feature-copy">
+                  <h3>Intelligence tool</h3>
+                  <p>
+                    Personalised intelligence so you never miss another
+                    opportunity.
+                  </p>
+                  <ul className="feature-detail">
+                    <li>Find funding opportunities</li>
+                    <li>Track sittings and consultations</li>
+                    <li>Intel on parliament contacts</li>
+                  </ul>
+                </div>
               </article>
-              <article className="feature-card">
-                <img
-                  src="/assets/feature-3.png"
-                  alt="Advisory call"
-                />
-                <h3>Advisory</h3>
-                <p>
-                  Expert guidance to build strategy and learn how to achieve it.
-                </p>
-                <ul className="feature-detail">
-                  <li>2 &times; 30 min calls a month</li>
-                  <li>Walkthroughs and learning</li>
-                  <li>Personalised support</li>
-                </ul>
+              <article className="feature-card feature-card--cutout">
+                <div className="feature-visual">
+                  <img src="/assets/advisory-frame.svg?v=smooth" alt="Advisory call" />
+                </div>
+                <div className="feature-copy">
+                  <h3>Advisory</h3>
+                  <p>
+                    Expert guidance to build strategy and learn how to achieve it.
+                  </p>
+                  <ul className="feature-detail">
+                    <li>2 &times; 30 min calls a month</li>
+                    <li>Walkthroughs and learning</li>
+                    <li>Personalised support</li>
+                  </ul>
+                </div>
               </article>
-              <article className="feature-card">
-                <img
-                  src="/assets/feature-2.png"
-                  alt="Template library"
-                />
-                <h3>Library</h3>
-                <p>
-                  Get the capability to execute with our tools, templates and
-                  workflows
-                </p>
-                <ul className="feature-detail">
-                  <li>Prepare for ministerial briefings</li>
-                  <li>Write budget asks</li>
-                  <li>Find contacts</li>
-                </ul>
+              <article className="feature-card feature-card--cutout">
+                <div className="feature-visual">
+                  <img
+                    src="/assets/library-frame.svg?v=illustration"
+                    alt="Typewriter plugged into a glowing lightbulb"
+                  />
+                </div>
+                <div className="feature-copy">
+                  <h3>Library</h3>
+                  <p>
+                    Get the capability to execute with our tools, templates and
+                    workflows
+                  </p>
+                  <ul className="feature-detail">
+                    <li>Prepare for ministerial briefings</li>
+                    <li>Write budget asks</li>
+                    <li>Find contacts</li>
+                  </ul>
+                </div>
               </article>
             </div>
 

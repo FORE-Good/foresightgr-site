@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "field": {
+    "count": 10,
+    "sizeMin": 64,
+    "sizeMax": 108,
+    "resting": 1,
+    "masterSpeed": 1,
+    "shape": "sticker"
+  },
+  "effects": [
+    {
+      "id": "drift",
+      "enabled": false,
+      "params": {
+        "distance": 22,
+        "speed": 0.2
+      }
+    },
+    {
+      "id": "wiggleX",
+      "enabled": false,
+      "params": {
+        "distance": 10,
+        "speed": 1.4
+      }
+    },
+    {
+      "id": "wiggleY",
+      "enabled": false,
+      "params": {
+        "distance": 10,
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "orbit",
+      "enabled": false,
+      "params": {
+        "radius": 12,
+        "speed": 0.45
+      }
+    },
+    {
+      "id": "jitter",
+      "enabled": true,
+      "params": {
+        "distance": 3,
+        "interval": 0.31
+      }
+    },
+    {
+      "id": "parallax",
+      "enabled": false,
+      "params": {}
+    },
+    {
+      "id": "scale",
+      "enabled": false,
+      "params": {
+        "min": 0.45,
+        "max": 1.35,
+        "speed": 0.7
+      }
+    },
+    {
+      "id": "spin",
+      "enabled": false,
+      "params": {
+        "speed": 40
+      }
+    },
+    {
+      "id": "wobble",
+      "enabled": false,
+      "params": {
+        "degrees": 6,
+        "speed": 0.4
+      }
+    },
+    {
+      "id": "twitch",
+      "enabled": true,
+      "params": {
+        "degrees": 15,
+        "interval": 0.87
+      }
+    },
+    {
+      "id": "squash",
+      "enabled": false,
+      "params": {
+        "amount": 0.4,
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "fade",
+      "enabled": false,
+      "params": {
+        "min": 0.12,
+        "max": 1,
+        "speed": 0.55
+      }
+    },
+    {
+      "id": "flicker",
+      "enabled": false,
+      "params": {
+        "amount": 0.85,
+        "speed": 1.6
+      }
+    },
+    {
+      "id": "blink",
+      "enabled": true,
+      "params": {
+        "duty": 0.9,
+        "off": 0.05,
+        "speed": 0.1
+      }
+    },
+    {
+      "id": "flash",
+      "enabled": false,
+      "params": {
+        "sharpness": 7,
+        "speed": 0.4
+      }
+    },
+    {
+      "id": "glow",
+      "enabled": false,
+      "params": {
+        "min": 0,
+        "max": 14
+      }
+    },
+    {
+      "id": "colour",
+      "enabled": false,
+      "params": {
+        "target": "#c5d0ff",
+        "amount": 1,
+        "speed": 0.35
+      }
+    }
+  ]
+}
